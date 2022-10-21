@@ -1,6 +1,6 @@
 WT03,Thunder
 WESF,Water equivalent of snowfall
-WT04,Ice pellets, sleet, snow pellets, or small hail"
+WT04,Ice pellets
 PRCP,Precipitation
 WT05,Hail (may include small hail)
 WT06,Glaze or rime
@@ -11,7 +11,7 @@ WT09,Blowing or drifting snow
 DASF,Number of days included in the multiday snow fall total (MDSF)
 WDF2,Direction of fastest 2-minute wind
 WDF5,Direction of fastest 5-second wind
-WT10,Tornado, waterspout, or funnel cloud"
+WT10,Tornado or funnel cloud"
 PGTM,Peak gust time
 WT11,High or damaging winds
 TMAX,Maximum temperature
@@ -21,11 +21,11 @@ WSF5,Fastest 5-second wind speed
 SNOW,Snowfall
 TOBS,Temperature at the time of observation
 AWND,Average wind speed
-WT01,Fog, ice fog, or freezing fog (may include heavy fog)
+WT01,Fog
 WESD,Water equivalent of snow on the ground
-WT02,Heavy fog or heaving freezing fog (not always distinguished from fog)
+WT02,Heavy fog
 PSUN,Daily percent of possible sunshine for the period
-TAVG,Average Temperature.
+TAVG,Average Temperature
 TMIN,Minimum temperature
 MDPR,Multiday precipitation total (use with DAPR and DWPR, if available)
 TSUN,Total sunshine for the period
