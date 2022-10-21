@@ -1,0 +1,1161 @@
+DATE,Borough,counts
+2015-01-01,Bronx,319
+2015-01-01,Brooklyn,1282
+2015-01-01,EWR,1
+2015-01-01,Manhattan,2867
+2015-01-01,Queens,853
+2015-01-01,Staten Island,38
+2015-01-01,Unknown,14
+2015-01-02,Bronx,206
+2015-01-02,Brooklyn,882
+2015-01-02,Manhattan,2313
+2015-01-02,Queens,637
+2015-01-02,Staten Island,19
+2015-01-02,Unknown,4
+2015-01-03,Bronx,220
+2015-01-03,Brooklyn,1024
+2015-01-03,Manhattan,2666
+2015-01-03,Queens,731
+2015-01-03,Staten Island,18
+2015-01-03,Unknown,9
+2015-01-04,Bronx,195
+2015-01-04,Brooklyn,964
+2015-01-04,Manhattan,2074
+2015-01-04,Queens,658
+2015-01-04,Staten Island,13
+2015-01-04,Unknown,6
+2015-01-05,Bronx,177
+2015-01-05,Brooklyn,848
+2015-01-05,EWR,1
+2015-01-05,Manhattan,2379
+2015-01-05,Queens,649
+2015-01-05,Staten Island,19
+2015-01-05,Unknown,7
+2015-01-06,Bronx,189
+2015-01-06,Brooklyn,826
+2015-01-06,Manhattan,2599
+2015-01-06,Queens,637
+2015-01-06,Staten Island,10
+2015-01-06,Unknown,4
+2015-01-07,Bronx,173
+2015-01-07,Brooklyn,917
+2015-01-07,Manhattan,2773
+2015-01-07,Queens,632
+2015-01-07,Staten Island,19
+2015-01-07,Unknown,6
+2015-01-08,Bronx,198
+2015-01-08,Brooklyn,889
+2015-01-08,EWR,1
+2015-01-08,Manhattan,2949
+2015-01-08,Queens,629
+2015-01-08,Staten Island,12
+2015-01-08,Unknown,8
+2015-01-09,Bronx,222
+2015-01-09,Brooklyn,969
+2015-01-09,Manhattan,2909
+2015-01-09,Queens,721
+2015-01-09,Staten Island,26
+2015-01-09,Unknown,8
+2015-01-10,Bronx,232
+2015-01-10,Brooklyn,1270
+2015-01-10,EWR,1
+2015-01-10,Manhattan,3107
+2015-01-10,Queens,785
+2015-01-10,Staten Island,18
+2015-01-10,Unknown,8
+2015-01-11,Bronx,202
+2015-01-11,Brooklyn,1074
+2015-01-11,Manhattan,2624
+2015-01-11,Queens,698
+2015-01-11,Staten Island,14
+2015-01-11,Unknown,8
+2015-01-12,Bronx,185
+2015-01-12,Brooklyn,850
+2015-01-12,Manhattan,2681
+2015-01-12,Queens,603
+2015-01-12,Staten Island,16
+2015-01-12,Unknown,8
+2015-01-13,Bronx,195
+2015-01-13,Brooklyn,840
+2015-01-13,EWR,1
+2015-01-13,Manhattan,2854
+2015-01-13,Queens,611
+2015-01-13,Staten Island,22
+2015-01-13,Unknown,6
+2015-01-14,Bronx,205
+2015-01-14,Brooklyn,867
+2015-01-14,Manhattan,2706
+2015-01-14,Queens,579
+2015-01-14,Staten Island,20
+2015-01-14,Unknown,5
+2015-01-15,Bronx,212
+2015-01-15,Brooklyn,894
+2015-01-15,Manhattan,2795
+2015-01-15,Queens,609
+2015-01-15,Staten Island,22
+2015-01-15,Unknown,6
+2015-01-16,Bronx,237
+2015-01-16,Brooklyn,1006
+2015-01-16,EWR,2
+2015-01-16,Manhattan,3085
+2015-01-16,Queens,718
+2015-01-16,Staten Island,24
+2015-01-16,Unknown,9
+2015-01-17,Bronx,251
+2015-01-17,Brooklyn,1307
+2015-01-17,Manhattan,2958
+2015-01-17,Queens,809
+2015-01-17,Staten Island,23
+2015-01-17,Unknown,7
+2015-01-18,Bronx,265
+2015-01-18,Brooklyn,1230
+2015-01-18,Manhattan,3070
+2015-01-18,Queens,831
+2015-01-18,Staten Island,24
+2015-01-18,Unknown,6
+2015-01-19,Bronx,208
+2015-01-19,Brooklyn,983
+2015-01-19,Manhattan,2640
+2015-01-19,Queens,719
+2015-01-19,Staten Island,18
+2015-01-19,Unknown,7
+2015-01-20,Bronx,203
+2015-01-20,Brooklyn,851
+2015-01-20,EWR,1
+2015-01-20,Manhattan,2665
+2015-01-20,Queens,625
+2015-01-20,Staten Island,23
+2015-01-20,Unknown,5
+2015-01-21,Bronx,199
+2015-01-21,Brooklyn,852
+2015-01-21,Manhattan,2623
+2015-01-21,Queens,613
+2015-01-21,Staten Island,30
+2015-01-21,Unknown,6
+2015-01-22,Bronx,208
+2015-01-22,Brooklyn,836
+2015-01-22,EWR,1
+2015-01-22,Manhattan,2728
+2015-01-22,Queens,624
+2015-01-22,Staten Island,16
+2015-01-22,Unknown,5
+2015-01-23,Bronx,238
+2015-01-23,Brooklyn,1032
+2015-01-23,Manhattan,3108
+2015-01-23,Queens,709
+2015-01-23,Staten Island,24
+2015-01-23,Unknown,6
+2015-01-24,Bronx,237
+2015-01-24,Brooklyn,1238
+2015-01-24,Manhattan,3157
+2015-01-24,Queens,788
+2015-01-24,Staten Island,29
+2015-01-24,Unknown,8
+2015-01-25,Bronx,218
+2015-01-25,Brooklyn,1140
+2015-01-25,Manhattan,2672
+2015-01-25,Queens,784
+2015-01-25,Staten Island,19
+2015-01-25,Unknown,9
+2015-01-26,Bronx,196
+2015-01-26,Brooklyn,821
+2015-01-26,EWR,1
+2015-01-26,Manhattan,2398
+2015-01-26,Queens,634
+2015-01-26,Staten Island,11
+2015-01-26,Unknown,5
+2015-01-27,Bronx,136
+2015-01-27,Brooklyn,630
+2015-01-27,Manhattan,1770
+2015-01-27,Queens,454
+2015-01-27,Staten Island,14
+2015-01-27,Unknown,5
+2015-01-28,Bronx,206
+2015-01-28,Brooklyn,953
+2015-01-28,Manhattan,2670
+2015-01-28,Queens,688
+2015-01-28,Staten Island,19
+2015-01-28,Unknown,5
+2015-01-29,Bronx,216
+2015-01-29,Brooklyn,960
+2015-01-29,Manhattan,2909
+2015-01-29,Queens,694
+2015-01-29,Staten Island,21
+2015-01-29,Unknown,9
+2015-01-30,Bronx,245
+2015-01-30,Brooklyn,1167
+2015-01-30,Manhattan,3311
+2015-01-30,Queens,801
+2015-01-30,Staten Island,25
+2015-01-30,Unknown,7
+2015-01-31,Bronx,275
+2015-01-31,Brooklyn,1381
+2015-01-31,Manhattan,3503
+2015-01-31,Queens,889
+2015-01-31,Staten Island,31
+2015-01-31,Unknown,11
+2015-02-01,Bronx,269
+2015-02-01,Brooklyn,1380
+2015-02-01,Manhattan,3033
+2015-02-01,Queens,909
+2015-02-01,Staten Island,29
+2015-02-01,Unknown,12
+2015-02-02,Bronx,222
+2015-02-02,Brooklyn,1003
+2015-02-02,Manhattan,2974
+2015-02-02,Queens,861
+2015-02-02,Staten Island,23
+2015-02-02,Unknown,17
+2015-02-03,Bronx,233
+2015-02-03,Brooklyn,1027
+2015-02-03,Manhattan,2909
+2015-02-03,Queens,818
+2015-02-03,Staten Island,17
+2015-02-03,Unknown,4
+2015-02-04,Bronx,242
+2015-02-04,Brooklyn,975
+2015-02-04,EWR,1
+2015-02-04,Manhattan,2864
+2015-02-04,Queens,697
+2015-02-04,Staten Island,18
+2015-02-04,Unknown,6
+2015-02-05,Bronx,261
+2015-02-05,Brooklyn,1012
+2015-02-05,Manhattan,3051
+2015-02-05,Queens,721
+2015-02-05,Staten Island,17
+2015-02-05,Unknown,9
+2015-02-06,Bronx,260
+2015-02-06,Brooklyn,1153
+2015-02-06,Manhattan,3247
+2015-02-06,Queens,818
+2015-02-06,Staten Island,29
+2015-02-06,Unknown,8
+2015-02-07,Bronx,295
+2015-02-07,Brooklyn,1340
+2015-02-07,EWR,1
+2015-02-07,Manhattan,3227
+2015-02-07,Queens,903
+2015-02-07,Staten Island,33
+2015-02-07,Unknown,9
+2015-02-08,Bronx,275
+2015-02-08,Brooklyn,1300
+2015-02-08,Manhattan,2749
+2015-02-08,Queens,830
+2015-02-08,Staten Island,25
+2015-02-08,Unknown,7
+2015-02-09,Bronx,222
+2015-02-09,Brooklyn,1011
+2015-02-09,Manhattan,2861
+2015-02-09,Queens,757
+2015-02-09,Staten Island,19
+2015-02-09,Unknown,7
+2015-02-10,Bronx,230
+2015-02-10,Brooklyn,972
+2015-02-10,EWR,1
+2015-02-10,Manhattan,2846
+2015-02-10,Queens,701
+2015-02-10,Staten Island,18
+2015-02-10,Unknown,6
+2015-02-11,Bronx,248
+2015-02-11,Brooklyn,957
+2015-02-11,Manhattan,2958
+2015-02-11,Queens,729
+2015-02-11,Staten Island,19
+2015-02-11,Unknown,5
+2015-02-12,Bronx,265
+2015-02-12,Brooklyn,1029
+2015-02-12,EWR,1
+2015-02-12,Manhattan,3170
+2015-02-12,Queens,735
+2015-02-12,Staten Island,23
+2015-02-12,Unknown,8
+2015-02-13,Bronx,307
+2015-02-13,Brooklyn,1301
+2015-02-13,Manhattan,3638
+2015-02-13,Queens,916
+2015-02-13,Staten Island,26
+2015-02-13,Unknown,13
+2015-02-14,Bronx,327
+2015-02-14,Brooklyn,1443
+2015-02-14,Manhattan,3773
+2015-02-14,Queens,1051
+2015-02-14,Staten Island,30
+2015-02-14,Unknown,7
+2015-02-15,Bronx,284
+2015-02-15,Brooklyn,1396
+2015-02-15,Manhattan,3450
+2015-02-15,Queens,978
+2015-02-15,Staten Island,26
+2015-02-15,Unknown,8
+2015-02-16,Bronx,256
+2015-02-16,Brooklyn,1230
+2015-02-16,Manhattan,3371
+2015-02-16,Queens,943
+2015-02-16,Staten Island,15
+2015-02-16,Unknown,8
+2015-02-17,Bronx,271
+2015-02-17,Brooklyn,1013
+2015-02-17,EWR,2
+2015-02-17,Manhattan,3089
+2015-02-17,Queens,838
+2015-02-17,Staten Island,33
+2015-02-17,Unknown,6
+2015-02-18,Bronx,245
+2015-02-18,Brooklyn,990
+2015-02-18,EWR,1
+2015-02-18,Manhattan,3114
+2015-02-18,Queens,793
+2015-02-18,Staten Island,23
+2015-02-18,Unknown,8
+2015-02-19,Bronx,295
+2015-02-19,Brooklyn,1053
+2015-02-19,EWR,1
+2015-02-19,Manhattan,3447
+2015-02-19,Queens,791
+2015-02-19,Staten Island,26
+2015-02-19,Unknown,10
+2015-02-20,Bronx,307
+2015-02-20,Brooklyn,1269
+2015-02-20,Manhattan,3752
+2015-02-20,Queens,922
+2015-02-20,Staten Island,28
+2015-02-20,Unknown,11
+2015-02-21,Bronx,322
+2015-02-21,Brooklyn,1437
+2015-02-21,EWR,1
+2015-02-21,Manhattan,3648
+2015-02-21,Queens,1009
+2015-02-21,Staten Island,29
+2015-02-21,Unknown,9
+2015-02-22,Bronx,300
+2015-02-22,Brooklyn,1228
+2015-02-22,EWR,1
+2015-02-22,Manhattan,2902
+2015-02-22,Queens,925
+2015-02-22,Staten Island,16
+2015-02-22,Unknown,12
+2015-02-23,Bronx,276
+2015-02-23,Brooklyn,1121
+2015-02-23,Manhattan,3131
+2015-02-23,Queens,889
+2015-02-23,Staten Island,27
+2015-02-23,Unknown,9
+2015-02-24,Bronx,273
+2015-02-24,Brooklyn,1046
+2015-02-24,Manhattan,3409
+2015-02-24,Queens,822
+2015-02-24,Staten Island,30
+2015-02-24,Unknown,8
+2015-02-25,Bronx,292
+2015-02-25,Brooklyn,1075
+2015-02-25,EWR,1
+2015-02-25,Manhattan,3093
+2015-02-25,Queens,807
+2015-02-25,Staten Island,19
+2015-02-25,Unknown,9
+2015-02-26,Bronx,270
+2015-02-26,Brooklyn,1083
+2015-02-26,EWR,1
+2015-02-26,Manhattan,3258
+2015-02-26,Queens,798
+2015-02-26,Staten Island,37
+2015-02-26,Unknown,7
+2015-02-27,Bronx,304
+2015-02-27,Brooklyn,1228
+2015-02-27,EWR,1
+2015-02-27,Manhattan,3547
+2015-02-27,Queens,915
+2015-02-27,Staten Island,32
+2015-02-27,Unknown,11
+2015-02-28,Bronx,372
+2015-02-28,Brooklyn,1430
+2015-02-28,Manhattan,3508
+2015-02-28,Queens,1018
+2015-02-28,Staten Island,28
+2015-02-28,Unknown,12
+2015-03-01,Bronx,298
+2015-03-01,Brooklyn,1285
+2015-03-01,Manhattan,3056
+2015-03-01,Queens,929
+2015-03-01,Staten Island,30
+2015-03-01,Unknown,8
+2015-03-02,Bronx,259
+2015-03-02,Brooklyn,1006
+2015-03-02,Manhattan,2892
+2015-03-02,Queens,870
+2015-03-02,Staten Island,25
+2015-03-02,Unknown,9
+2015-03-03,Bronx,254
+2015-03-03,Brooklyn,959
+2015-03-03,Manhattan,3192
+2015-03-03,Queens,784
+2015-03-03,Staten Island,15
+2015-03-03,Unknown,8
+2015-03-04,Bronx,271
+2015-03-04,Brooklyn,1023
+2015-03-04,EWR,2
+2015-03-04,Manhattan,3119
+2015-03-04,Queens,817
+2015-03-04,Staten Island,28
+2015-03-04,Unknown,5
+2015-03-05,Bronx,254
+2015-03-05,Brooklyn,1003
+2015-03-05,EWR,2
+2015-03-05,Manhattan,3212
+2015-03-05,Queens,786
+2015-03-05,Staten Island,12
+2015-03-05,Unknown,11
+2015-03-06,Bronx,283
+2015-03-06,Brooklyn,1161
+2015-03-06,EWR,1
+2015-03-06,Manhattan,3334
+2015-03-06,Queens,899
+2015-03-06,Staten Island,26
+2015-03-06,Unknown,15
+2015-03-07,Bronx,339
+2015-03-07,Brooklyn,1363
+2015-03-07,Manhattan,3321
+2015-03-07,Queens,982
+2015-03-07,Staten Island,27
+2015-03-07,Unknown,10
+2015-03-08,Bronx,288
+2015-03-08,Brooklyn,1291
+2015-03-08,Manhattan,2817
+2015-03-08,Queens,892
+2015-03-08,Staten Island,15
+2015-03-08,Unknown,12
+2015-03-09,Bronx,258
+2015-03-09,Brooklyn,1001
+2015-03-09,Manhattan,2712
+2015-03-09,Queens,828
+2015-03-09,Staten Island,23
+2015-03-09,Unknown,9
+2015-03-10,Bronx,244
+2015-03-10,Brooklyn,1050
+2015-03-10,EWR,1
+2015-03-10,Manhattan,3051
+2015-03-10,Queens,799
+2015-03-10,Staten Island,14
+2015-03-10,Unknown,16
+2015-03-11,Bronx,261
+2015-03-11,Brooklyn,979
+2015-03-11,EWR,1
+2015-03-11,Manhattan,2910
+2015-03-11,Queens,779
+2015-03-11,Staten Island,24
+2015-03-11,Unknown,9
+2015-03-12,Bronx,259
+2015-03-12,Brooklyn,1061
+2015-03-12,Manhattan,3149
+2015-03-12,Queens,839
+2015-03-12,Staten Island,21
+2015-03-12,Unknown,10
+2015-03-13,Bronx,298
+2015-03-13,Brooklyn,1223
+2015-03-13,Manhattan,3406
+2015-03-13,Queens,886
+2015-03-13,Staten Island,33
+2015-03-13,Unknown,11
+2015-03-14,Bronx,310
+2015-03-14,Brooklyn,1415
+2015-03-14,Manhattan,3638
+2015-03-14,Queens,994
+2015-03-14,Staten Island,36
+2015-03-14,Unknown,12
+2015-03-15,Bronx,327
+2015-03-15,Brooklyn,1278
+2015-03-15,EWR,1
+2015-03-15,Manhattan,2867
+2015-03-15,Queens,883
+2015-03-15,Staten Island,16
+2015-03-15,Unknown,8
+2015-03-16,Bronx,256
+2015-03-16,Brooklyn,1012
+2015-03-16,Manhattan,2730
+2015-03-16,Queens,833
+2015-03-16,Staten Island,31
+2015-03-16,Unknown,10
+2015-03-17,Bronx,260
+2015-03-17,Brooklyn,1041
+2015-03-17,Manhattan,2986
+2015-03-17,Queens,851
+2015-03-17,Staten Island,23
+2015-03-17,Unknown,11
+2015-03-18,Bronx,284
+2015-03-18,Brooklyn,1104
+2015-03-18,Manhattan,3035
+2015-03-18,Queens,827
+2015-03-18,Staten Island,33
+2015-03-18,Unknown,8
+2015-03-19,Bronx,261
+2015-03-19,Brooklyn,1103
+2015-03-19,Manhattan,3158
+2015-03-19,Queens,858
+2015-03-19,Staten Island,20
+2015-03-19,Unknown,10
+2015-03-20,Bronx,319
+2015-03-20,Brooklyn,1231
+2015-03-20,Manhattan,3607
+2015-03-20,Queens,919
+2015-03-20,Staten Island,29
+2015-03-20,Unknown,10
+2015-03-21,Bronx,322
+2015-03-21,Brooklyn,1383
+2015-03-21,EWR,1
+2015-03-21,Manhattan,3214
+2015-03-21,Queens,984
+2015-03-21,Staten Island,35
+2015-03-21,Unknown,16
+2015-03-22,Bronx,309
+2015-03-22,Brooklyn,1372
+2015-03-22,Manhattan,3025
+2015-03-22,Queens,952
+2015-03-22,Staten Island,28
+2015-03-22,Unknown,11
+2015-03-23,Bronx,263
+2015-03-23,Brooklyn,1101
+2015-03-23,EWR,1
+2015-03-23,Manhattan,2964
+2015-03-23,Queens,853
+2015-03-23,Staten Island,31
+2015-03-23,Unknown,6
+2015-03-24,Bronx,261
+2015-03-24,Brooklyn,1071
+2015-03-24,Manhattan,3058
+2015-03-24,Queens,818
+2015-03-24,Staten Island,24
+2015-03-24,Unknown,9
+2015-03-25,Bronx,274
+2015-03-25,Brooklyn,1122
+2015-03-25,Manhattan,3228
+2015-03-25,Queens,827
+2015-03-25,Staten Island,27
+2015-03-25,Unknown,8
+2015-03-26,Bronx,286
+2015-03-26,Brooklyn,1138
+2015-03-26,EWR,1
+2015-03-26,Manhattan,3180
+2015-03-26,Queens,849
+2015-03-26,Staten Island,25
+2015-03-26,Unknown,8
+2015-03-27,Bronx,309
+2015-03-27,Brooklyn,1291
+2015-03-27,Manhattan,3431
+2015-03-27,Queens,960
+2015-03-27,Staten Island,34
+2015-03-27,Unknown,14
+2015-03-28,Bronx,360
+2015-03-28,Brooklyn,1503
+2015-03-28,Manhattan,3519
+2015-03-28,Queens,1039
+2015-03-28,Staten Island,43
+2015-03-28,Unknown,6
+2015-03-29,Bronx,317
+2015-03-29,Brooklyn,1373
+2015-03-29,Manhattan,3071
+2015-03-29,Queens,1001
+2015-03-29,Staten Island,30
+2015-03-29,Unknown,11
+2015-03-30,Bronx,282
+2015-03-30,Brooklyn,1090
+2015-03-30,Manhattan,3022
+2015-03-30,Queens,897
+2015-03-30,Staten Island,21
+2015-03-30,Unknown,8
+2015-03-31,Bronx,288
+2015-03-31,Brooklyn,1116
+2015-03-31,EWR,1
+2015-03-31,Manhattan,3327
+2015-03-31,Queens,883
+2015-03-31,Staten Island,21
+2015-03-31,Unknown,9
+2015-04-01,Bronx,242
+2015-04-01,Brooklyn,1015
+2015-04-01,Manhattan,2700
+2015-04-01,Queens,739
+2015-04-01,Staten Island,18
+2015-04-01,Unknown,9
+2015-04-02,Bronx,257
+2015-04-02,Brooklyn,1102
+2015-04-02,EWR,1
+2015-04-02,Manhattan,2748
+2015-04-02,Queens,779
+2015-04-02,Staten Island,25
+2015-04-02,Unknown,8
+2015-04-03,Bronx,277
+2015-04-03,Brooklyn,1254
+2015-04-03,Manhattan,2882
+2015-04-03,Queens,802
+2015-04-03,Staten Island,30
+2015-04-03,Unknown,7
+2015-04-04,Bronx,301
+2015-04-04,Brooklyn,1301
+2015-04-04,Manhattan,2632
+2015-04-04,Queens,883
+2015-04-04,Staten Island,26
+2015-04-04,Unknown,9
+2015-04-05,Bronx,302
+2015-04-05,Brooklyn,1292
+2015-04-05,Manhattan,2349
+2015-04-05,Queens,891
+2015-04-05,Staten Island,31
+2015-04-05,Unknown,8
+2015-04-06,Bronx,268
+2015-04-06,Brooklyn,950
+2015-04-06,EWR,1
+2015-04-06,Manhattan,2439
+2015-04-06,Queens,811
+2015-04-06,Staten Island,21
+2015-04-06,Unknown,9
+2015-04-07,Bronx,241
+2015-04-07,Brooklyn,1023
+2015-04-07,EWR,1
+2015-04-07,Manhattan,2658
+2015-04-07,Queens,755
+2015-04-07,Staten Island,21
+2015-04-07,Unknown,5
+2015-04-08,Bronx,247
+2015-04-08,Brooklyn,1021
+2015-04-08,Manhattan,2621
+2015-04-08,Queens,785
+2015-04-08,Staten Island,23
+2015-04-08,Unknown,8
+2015-04-09,Bronx,257
+2015-04-09,Brooklyn,1021
+2015-04-09,EWR,1
+2015-04-09,Manhattan,2817
+2015-04-09,Queens,813
+2015-04-09,Staten Island,32
+2015-04-09,Unknown,9
+2015-04-10,Bronx,306
+2015-04-10,Brooklyn,1154
+2015-04-10,Manhattan,2912
+2015-04-10,Queens,864
+2015-04-10,Staten Island,22
+2015-04-10,Unknown,9
+2015-04-11,Bronx,359
+2015-04-11,Brooklyn,1382
+2015-04-11,Manhattan,2898
+2015-04-11,Queens,957
+2015-04-11,Staten Island,33
+2015-04-11,Unknown,12
+2015-04-12,Bronx,308
+2015-04-12,Brooklyn,1272
+2015-04-12,EWR,1
+2015-04-12,Manhattan,2533
+2015-04-12,Queens,875
+2015-04-12,Staten Island,36
+2015-04-12,Unknown,9
+2015-04-13,Bronx,244
+2015-04-13,Brooklyn,1014
+2015-04-13,EWR,1
+2015-04-13,Manhattan,2401
+2015-04-13,Queens,800
+2015-04-13,Staten Island,20
+2015-04-13,Unknown,8
+2015-04-14,Bronx,241
+2015-04-14,Brooklyn,973
+2015-04-14,Manhattan,2538
+2015-04-14,Queens,747
+2015-04-14,Staten Island,29
+2015-04-14,Unknown,9
+2015-04-15,Bronx,258
+2015-04-15,Brooklyn,1010
+2015-04-15,Manhattan,2633
+2015-04-15,Queens,758
+2015-04-15,Staten Island,27
+2015-04-15,Unknown,13
+2015-04-16,Bronx,283
+2015-04-16,Brooklyn,1083
+2015-04-16,EWR,1
+2015-04-16,Manhattan,2802
+2015-04-16,Queens,784
+2015-04-16,Staten Island,22
+2015-04-16,Unknown,10
+2015-04-17,Bronx,293
+2015-04-17,Brooklyn,1158
+2015-04-17,Manhattan,2963
+2015-04-17,Queens,892
+2015-04-17,Staten Island,24
+2015-04-17,Unknown,13
+2015-04-18,Bronx,338
+2015-04-18,Brooklyn,1488
+2015-04-18,Manhattan,3090
+2015-04-18,Queens,1016
+2015-04-18,Staten Island,37
+2015-04-18,Unknown,13
+2015-04-19,Bronx,322
+2015-04-19,Brooklyn,1438
+2015-04-19,Manhattan,2791
+2015-04-19,Queens,937
+2015-04-19,Staten Island,28
+2015-04-19,Unknown,9
+2015-04-20,Bronx,269
+2015-04-20,Brooklyn,1170
+2015-04-20,Manhattan,2953
+2015-04-20,Queens,829
+2015-04-20,Staten Island,17
+2015-04-20,Unknown,10
+2015-04-21,Bronx,276
+2015-04-21,Brooklyn,1039
+2015-04-21,Manhattan,2706
+2015-04-21,Queens,813
+2015-04-21,Staten Island,25
+2015-04-21,Unknown,7
+2015-04-22,Bronx,251
+2015-04-22,Brooklyn,1085
+2015-04-22,EWR,2
+2015-04-22,Manhattan,2928
+2015-04-22,Queens,800
+2015-04-22,Staten Island,31
+2015-04-22,Unknown,8
+2015-04-23,Bronx,283
+2015-04-23,Brooklyn,1130
+2015-04-23,EWR,1
+2015-04-23,Manhattan,3034
+2015-04-23,Queens,853
+2015-04-23,Staten Island,31
+2015-04-23,Unknown,10
+2015-04-24,Bronx,293
+2015-04-24,Brooklyn,1283
+2015-04-24,Manhattan,3249
+2015-04-24,Queens,891
+2015-04-24,Staten Island,34
+2015-04-24,Unknown,8
+2015-04-25,Bronx,360
+2015-04-25,Brooklyn,1595
+2015-04-25,Manhattan,3304
+2015-04-25,Queens,1017
+2015-04-25,Staten Island,39
+2015-04-25,Unknown,10
+2015-04-26,Bronx,317
+2015-04-26,Brooklyn,1461
+2015-04-26,Manhattan,3044
+2015-04-26,Queens,967
+2015-04-26,Staten Island,33
+2015-04-26,Unknown,13
+2015-04-27,Bronx,277
+2015-04-27,Brooklyn,1085
+2015-04-27,Manhattan,2592
+2015-04-27,Queens,788
+2015-04-27,Staten Island,22
+2015-04-27,Unknown,10
+2015-04-28,Bronx,284
+2015-04-28,Brooklyn,1048
+2015-04-28,Manhattan,2740
+2015-04-28,Queens,815
+2015-04-28,Staten Island,22
+2015-04-28,Unknown,4
+2015-04-29,Bronx,280
+2015-04-29,Brooklyn,1119
+2015-04-29,Manhattan,2712
+2015-04-29,Queens,789
+2015-04-29,Staten Island,32
+2015-04-29,Unknown,9
+2015-04-30,Bronx,290
+2015-04-30,Brooklyn,1116
+2015-04-30,Manhattan,2837
+2015-04-30,Queens,826
+2015-04-30,Staten Island,34
+2015-04-30,Unknown,9
+2015-05-01,Bronx,321
+2015-05-01,Brooklyn,1358
+2015-05-01,EWR,2
+2015-05-01,Manhattan,3444
+2015-05-01,Queens,1002
+2015-05-01,Staten Island,43
+2015-05-01,Unknown,12
+2015-05-02,Bronx,393
+2015-05-02,Brooklyn,1726
+2015-05-02,Manhattan,3649
+2015-05-02,Queens,1108
+2015-05-02,Staten Island,41
+2015-05-02,Unknown,10
+2015-05-03,Bronx,368
+2015-05-03,Brooklyn,1536
+2015-05-03,Manhattan,3161
+2015-05-03,Queens,1028
+2015-05-03,Staten Island,36
+2015-05-03,Unknown,13
+2015-05-04,Bronx,266
+2015-05-04,Brooklyn,1140
+2015-05-04,Manhattan,2949
+2015-05-04,Queens,844
+2015-05-04,Staten Island,37
+2015-05-04,Unknown,9
+2015-05-05,Bronx,270
+2015-05-05,Brooklyn,1081
+2015-05-05,EWR,1
+2015-05-05,Manhattan,3163
+2015-05-05,Queens,813
+2015-05-05,Staten Island,24
+2015-05-05,Unknown,11
+2015-05-06,Bronx,286
+2015-05-06,Brooklyn,1127
+2015-05-06,Manhattan,3228
+2015-05-06,Queens,920
+2015-05-06,Staten Island,32
+2015-05-06,Unknown,7
+2015-05-07,Bronx,306
+2015-05-07,Brooklyn,1141
+2015-05-07,EWR,1
+2015-05-07,Manhattan,3217
+2015-05-07,Queens,854
+2015-05-07,Staten Island,29
+2015-05-07,Unknown,7
+2015-05-08,Bronx,340
+2015-05-08,Brooklyn,1292
+2015-05-08,Manhattan,3360
+2015-05-08,Queens,854
+2015-05-08,Staten Island,49
+2015-05-08,Unknown,11
+2015-05-09,Bronx,368
+2015-05-09,Brooklyn,1633
+2015-05-09,Manhattan,3388
+2015-05-09,Queens,1052
+2015-05-09,Staten Island,43
+2015-05-09,Unknown,14
+2015-05-10,Bronx,355
+2015-05-10,Brooklyn,1528
+2015-05-10,EWR,2
+2015-05-10,Manhattan,2962
+2015-05-10,Queens,1000
+2015-05-10,Staten Island,36
+2015-05-10,Unknown,9
+2015-05-11,Bronx,286
+2015-05-11,Brooklyn,1185
+2015-05-11,EWR,1
+2015-05-11,Manhattan,2956
+2015-05-11,Queens,869
+2015-05-11,Staten Island,32
+2015-05-11,Unknown,9
+2015-05-12,Bronx,266
+2015-05-12,Brooklyn,1069
+2015-05-12,Manhattan,3134
+2015-05-12,Queens,852
+2015-05-12,Staten Island,22
+2015-05-12,Unknown,10
+2015-05-13,Bronx,283
+2015-05-13,Brooklyn,1121
+2015-05-13,EWR,1
+2015-05-13,Manhattan,3203
+2015-05-13,Queens,855
+2015-05-13,Staten Island,26
+2015-05-13,Unknown,7
+2015-05-14,Bronx,273
+2015-05-14,Brooklyn,1128
+2015-05-14,Manhattan,3335
+2015-05-14,Queens,922
+2015-05-14,Staten Island,28
+2015-05-14,Unknown,6
+2015-05-15,Bronx,425
+2015-05-15,Brooklyn,1275
+2015-05-15,EWR,1
+2015-05-15,Manhattan,3546
+2015-05-15,Queens,947
+2015-05-15,Staten Island,46
+2015-05-15,Unknown,8
+2015-05-16,Bronx,531
+2015-05-16,Brooklyn,1638
+2015-05-16,Manhattan,3843
+2015-05-16,Queens,1091
+2015-05-16,Staten Island,41
+2015-05-16,Unknown,13
+2015-05-17,Bronx,489
+2015-05-17,Brooklyn,1471
+2015-05-17,EWR,2
+2015-05-17,Manhattan,3289
+2015-05-17,Queens,1044
+2015-05-17,Staten Island,42
+2015-05-17,Unknown,11
+2015-05-18,Bronx,295
+2015-05-18,Brooklyn,1205
+2015-05-18,Manhattan,3146
+2015-05-18,Queens,935
+2015-05-18,Staten Island,24
+2015-05-18,Unknown,10
+2015-05-19,Bronx,296
+2015-05-19,Brooklyn,1122
+2015-05-19,EWR,1
+2015-05-19,Manhattan,3382
+2015-05-19,Queens,932
+2015-05-19,Staten Island,23
+2015-05-19,Unknown,14
+2015-05-20,Bronx,324
+2015-05-20,Brooklyn,1189
+2015-05-20,EWR,1
+2015-05-20,Manhattan,3398
+2015-05-20,Queens,886
+2015-05-20,Staten Island,30
+2015-05-20,Unknown,9
+2015-05-21,Bronx,331
+2015-05-21,Brooklyn,1257
+2015-05-21,EWR,1
+2015-05-21,Manhattan,3391
+2015-05-21,Queens,949
+2015-05-21,Staten Island,37
+2015-05-21,Unknown,11
+2015-05-22,Bronx,391
+2015-05-22,Brooklyn,1350
+2015-05-22,Manhattan,3387
+2015-05-22,Queens,1035
+2015-05-22,Staten Island,38
+2015-05-22,Unknown,13
+2015-05-23,Bronx,410
+2015-05-23,Brooklyn,1439
+2015-05-23,EWR,1
+2015-05-23,Manhattan,2994
+2015-05-23,Queens,1020
+2015-05-23,Staten Island,32
+2015-05-23,Unknown,18
+2015-05-24,Bronx,358
+2015-05-24,Brooklyn,1400
+2015-05-24,Manhattan,2769
+2015-05-24,Queens,1020
+2015-05-24,Staten Island,32
+2015-05-24,Unknown,9
+2015-05-25,Bronx,326
+2015-05-25,Brooklyn,1259
+2015-05-25,EWR,1
+2015-05-25,Manhattan,2643
+2015-05-25,Queens,1019
+2015-05-25,Staten Island,28
+2015-05-25,Unknown,10
+2015-05-26,Bronx,291
+2015-05-26,Brooklyn,1182
+2015-05-26,Manhattan,2936
+2015-05-26,Queens,946
+2015-05-26,Staten Island,25
+2015-05-26,Unknown,11
+2015-05-27,Bronx,290
+2015-05-27,Brooklyn,1136
+2015-05-27,EWR,1
+2015-05-27,Manhattan,3286
+2015-05-27,Queens,876
+2015-05-27,Staten Island,41
+2015-05-27,Unknown,14
+2015-05-28,Bronx,305
+2015-05-28,Brooklyn,1171
+2015-05-28,Manhattan,3470
+2015-05-28,Queens,919
+2015-05-28,Staten Island,34
+2015-05-28,Unknown,11
+2015-05-29,Bronx,347
+2015-05-29,Brooklyn,1327
+2015-05-29,EWR,1
+2015-05-29,Manhattan,3455
+2015-05-29,Queens,989
+2015-05-29,Staten Island,41
+2015-05-29,Unknown,11
+2015-05-30,Bronx,388
+2015-05-30,Brooklyn,1648
+2015-05-30,EWR,2
+2015-05-30,Manhattan,3504
+2015-05-30,Queens,1147
+2015-05-30,Staten Island,48
+2015-05-30,Unknown,9
+2015-05-31,Bronx,339
+2015-05-31,Brooklyn,1636
+2015-05-31,Manhattan,3384
+2015-05-31,Queens,1113
+2015-05-31,Staten Island,46
+2015-05-31,Unknown,10
+2015-06-01,Bronx,291
+2015-06-01,Brooklyn,1235
+2015-06-01,Manhattan,3521
+2015-06-01,Queens,941
+2015-06-01,Staten Island,38
+2015-06-01,Unknown,8
+2015-06-02,Bronx,291
+2015-06-02,Brooklyn,1212
+2015-06-02,EWR,1
+2015-06-02,Manhattan,3479
+2015-06-02,Queens,894
+2015-06-02,Staten Island,31
+2015-06-02,Unknown,8
+2015-06-03,Bronx,309
+2015-06-03,Brooklyn,1212
+2015-06-03,Manhattan,3269
+2015-06-03,Queens,882
+2015-06-03,Staten Island,31
+2015-06-03,Unknown,14
+2015-06-04,Bronx,312
+2015-06-04,Brooklyn,1239
+2015-06-04,Manhattan,3355
+2015-06-04,Queens,902
+2015-06-04,Staten Island,30
+2015-06-04,Unknown,9
+2015-06-05,Bronx,355
+2015-06-05,Brooklyn,1367
+2015-06-05,EWR,2
+2015-06-05,Manhattan,3579
+2015-06-05,Queens,1037
+2015-06-05,Staten Island,41
+2015-06-05,Unknown,10
+2015-06-06,Bronx,395
+2015-06-06,Brooklyn,1563
+2015-06-06,EWR,1
+2015-06-06,Manhattan,3314
+2015-06-06,Queens,1148
+2015-06-06,Staten Island,37
+2015-06-06,Unknown,14
+2015-06-07,Bronx,356
+2015-06-07,Brooklyn,1494
+2015-06-07,Manhattan,3170
+2015-06-07,Queens,1110
+2015-06-07,Staten Island,36
+2015-06-07,Unknown,13
+2015-06-08,Bronx,292
+2015-06-08,Brooklyn,1146
+2015-06-08,EWR,1
+2015-06-08,Manhattan,3026
+2015-06-08,Queens,877
+2015-06-08,Staten Island,30
+2015-06-08,Unknown,11
+2015-06-09,Bronx,303
+2015-06-09,Brooklyn,1135
+2015-06-09,EWR,2
+2015-06-09,Manhattan,3222
+2015-06-09,Queens,878
+2015-06-09,Staten Island,29
+2015-06-09,Unknown,9
+2015-06-10,Bronx,278
+2015-06-10,Brooklyn,1170
+2015-06-10,EWR,1
+2015-06-10,Manhattan,3300
+2015-06-10,Queens,899
+2015-06-10,Staten Island,26
+2015-06-10,Unknown,6
+2015-06-11,Bronx,304
+2015-06-11,Brooklyn,1194
+2015-06-11,EWR,2
+2015-06-11,Manhattan,3474
+2015-06-11,Queens,902
+2015-06-11,Staten Island,29
+2015-06-11,Unknown,13
+2015-06-12,Bronx,343
+2015-06-12,Brooklyn,1408
+2015-06-12,EWR,1
+2015-06-12,Manhattan,3450
+2015-06-12,Queens,972
+2015-06-12,Staten Island,55
+2015-06-12,Unknown,10
+2015-06-13,Bronx,385
+2015-06-13,Brooklyn,1628
+2015-06-13,EWR,1
+2015-06-13,Manhattan,3298
+2015-06-13,Queens,1079
+2015-06-13,Staten Island,42
+2015-06-13,Unknown,12
+2015-06-14,Bronx,320
+2015-06-14,Brooklyn,1594
+2015-06-14,EWR,2
+2015-06-14,Manhattan,3072
+2015-06-14,Queens,1054
+2015-06-14,Staten Island,53
+2015-06-14,Unknown,14
+2015-06-15,Bronx,300
+2015-06-15,Brooklyn,1228
+2015-06-15,EWR,3
+2015-06-15,Manhattan,3164
+2015-06-15,Queens,952
+2015-06-15,Staten Island,26
+2015-06-15,Unknown,9
+2015-06-16,Bronx,293
+2015-06-16,Brooklyn,1169
+2015-06-16,EWR,2
+2015-06-16,Manhattan,3276
+2015-06-16,Queens,910
+2015-06-16,Staten Island,35
+2015-06-16,Unknown,19
+2015-06-17,Bronx,289
+2015-06-17,Brooklyn,1280
+2015-06-17,EWR,1
+2015-06-17,Manhattan,3380
+2015-06-17,Queens,901
+2015-06-17,Staten Island,34
+2015-06-17,Unknown,11
+2015-06-18,Bronx,330
+2015-06-18,Brooklyn,1272
+2015-06-18,EWR,2
+2015-06-18,Manhattan,3358
+2015-06-18,Queens,893
+2015-06-18,Staten Island,43
+2015-06-18,Unknown,10
+2015-06-19,Bronx,349
+2015-06-19,Brooklyn,1352
+2015-06-19,EWR,1
+2015-06-19,Manhattan,3492
+2015-06-19,Queens,1033
+2015-06-19,Staten Island,44
+2015-06-19,Unknown,17
+2015-06-20,Bronx,381
+2015-06-20,Brooklyn,1595
+2015-06-20,Manhattan,3314
+2015-06-20,Queens,1099
+2015-06-20,Staten Island,47
+2015-06-20,Unknown,9
+2015-06-21,Bronx,363
+2015-06-21,Brooklyn,1586
+2015-06-21,Manhattan,3049
+2015-06-21,Queens,1054
+2015-06-21,Staten Island,46
+2015-06-21,Unknown,10
+2015-06-22,Bronx,312
+2015-06-22,Brooklyn,1205
+2015-06-22,EWR,1
+2015-06-22,Manhattan,3021
+2015-06-22,Queens,926
+2015-06-22,Staten Island,39
+2015-06-22,Unknown,10
+2015-06-23,Bronx,330
+2015-06-23,Brooklyn,1220
+2015-06-23,Manhattan,3245
+2015-06-23,Queens,900
+2015-06-23,Staten Island,37
+2015-06-23,Unknown,10
+2015-06-24,Bronx,348
+2015-06-24,Brooklyn,1212
+2015-06-24,Manhattan,3260
+2015-06-24,Queens,851
+2015-06-24,Staten Island,41
+2015-06-24,Unknown,14
+2015-06-25,Bronx,326
+2015-06-25,Brooklyn,1224
+2015-06-25,EWR,1
+2015-06-25,Manhattan,3276
+2015-06-25,Queens,943
+2015-06-25,Staten Island,38
+2015-06-25,Unknown,15
+2015-06-26,Bronx,361
+2015-06-26,Brooklyn,1357
+2015-06-26,Manhattan,3420
+2015-06-26,Queens,1042
+2015-06-26,Staten Island,43
+2015-06-26,Unknown,9
+2015-06-27,Bronx,384
+2015-06-27,Brooklyn,1790
+2015-06-27,Manhattan,3827
+2015-06-27,Queens,1135
+2015-06-27,Staten Island,55
+2015-06-27,Unknown,16
+2015-06-28,Bronx,379
+2015-06-28,Brooklyn,1470
+2015-06-28,EWR,2
+2015-06-28,Manhattan,3153
+2015-06-28,Queens,1107
+2015-06-28,Staten Island,29
+2015-06-28,Unknown,10
+2015-06-29,Bronx,304
+2015-06-29,Brooklyn,1199
+2015-06-29,Manhattan,3069
+2015-06-29,Queens,913
+2015-06-29,Staten Island,22
+2015-06-29,Unknown,9
+2015-06-30,Bronx,302
+2015-06-30,Brooklyn,1227
+2015-06-30,Manhattan,3170
+2015-06-30,Queens,940
+2015-06-30,Staten Island,23
+2015-06-30,Unknown,6
