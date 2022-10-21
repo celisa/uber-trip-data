@@ -1,0 +1,197 @@
+---
+title: "IDS 702 - Group Project"
+author: "Elisa Chen, Ahmed Ibrahim, Genesis Qu, Pomelo Wu"
+date: "`r Sys.Date()`"
+output:
+  pdf_document:
+    latex_engine: xelatex
+---
+
+```{r setup, include=FALSE}
+library(knitr)
+library(caret)
+library(boot)
+library(tidyverse)
+library(table1)
+library(pander)
+library(leaps)
+library(tinytex)
+library(car)
+library(dplyr)
+library(lattice) 
+library(RColorBrewer)
+panderOptions('digits', 6)
+panderOptions('round', 2)
+panderOptions('keep.trailing.zeros', TRUE)
+knitr::opts_chunk$set(echo = TRUE)
+# Importing packages
+library(lubridate)
+library(ggplot2)
+```
+```{r import data, echo=FALSE, include=FALSE}
+# Importing the data
+uber <- read_csv("https://raw.githubusercontent.com/celisa/uber-trip-data/main/uber-data-cleaned.csv")
+```
+
+
+## Introduction
+New York City is known for heavy traffic and it's becoming increasingly important to understand how ride pickup services impact traffic flow in New York City. For our final project, we would like to research two questions 1) if weather conditions have an impact on the number of Uber pickup rides in New York City and 2) whether the introduction of Uber in New York City has any impact on traffic collisions. More specifically, we are interested in building a predictive model to estimate whether the number of Ubers on the road will result in a traffic collision (yes/no). We tailored down the first question to be "Do weather conditions influence the number of Uber pickup rides in NYC in 2015?" and the second question to be “Does Uber increase the probability of traffic collisions in New York City in 2015”?  
+
+The sections are divided between Q1 and Q2. 
+
+## Q1 - Data Overview
+In this section, we will be discussing the impact weather conditions have on the number of Uber pickup rides in New York City between the months January - June in 2015. More specifically, the question we are answering is: "Do weather conditions influence the number of Uber pickup rides in NYC in 2015?" We enriched the Uber dataset with the weather data from National Center for Environmental Information and this dataset includes information about the weather conditions in New York City on a given day like precipitation, temperature, wind and snow levels. After aggregating the raw Uber data at the date and Borough level, we have 1160 observations with 50 variables. Please see appendix Table 1.1 for more details about the dataset and Table 1.2 contains the data dictionary for the weather variables.
+
+## Q1 - EDA
+```{r eda1, echo=FALSE, results='hide', message = FALSE, warnings = FALSE}
+uber15 <- read_csv("https://raw.githubusercontent.com/celisa/uber-trip-data/main/uber-data-2015.csv")
+uber15$weekday <- wday(uber15$Pickup_date)
+uber15$weekday <- 
+  factor(uber15$weekday, 
+         levels=c(1:7),
+         labels=c("Sunday", "Monday","Tuesday",
+                  "Wednesday","Thursday","Friday",
+                  "Saturday"))
+uber15_agg <- uber15 %>% group_by(Pickup_date, Borough) %>% 
+  summarise(trips = sum(num_uber_trips))
+#ggplot(data = uber15_agg, aes(x = Borough, y = trips)) + 
+#  geom_bar(position = "dodge",  stat = "summary", fun = "mean") +
+#  labs(x = "Borough", y = "Number of trips", title = "Average number of trips by borough")
+uber_weather <- uber %>% select(!num_uber_trips)
+uber15_weather <- left_join(uber15_agg, uber_weather, by = c("Pickup_date" = "DATE"))
+```
+
+First thing we observe that regardless of the temperature of the day, Uber rides are significantly more popular in Manhattan than any other Borough. The number of pickups seem to remain fairly constant within a Borough with a slight increase in number of pickups during hotter days (65+Fahrenheit).
+
+We can also see that the average number of pickups doesn't vary significantly between rainy and non-rainy days. This potentially signals that weather conditions might not be a good indicator for predicting number of pick-up rides on a given day.
+
+```{r echo=FALSE, message = FALSE, out.width = "50%", results = "hide", fig.show='hold'}
+par(mfrow = c(1, 2))
+ggplot(data = uber15_weather, aes(x = TAVG, y = trips, color = Borough)) + 
+  geom_point() +
+  labs(x = "Tempearature (in Fahrenheit)", y = "Number of trips", title = "Temperature x Trips broken down by Boroughs")
+
+uber15_weather$rain <- ifelse(uber15_weather$PRCP > 0, "rain", "no_rain")
+ggplot(data = uber15_weather, aes(x = Borough, y = trips, color = rain)) + geom_boxplot() +
+  labs(x = "Borough", y = "Number of trips", title = "How boroughs and rain impact rides (by day)") + scale_color_discrete(name = "", labels = c("No rain", "Rain"))
+```
+
+## Potential limitations
+We're seeing a number of potential limitations within the data that could impact our model results. Firstly, our Uber data doesn't capture data from all 12 months of the year. Certain patterns (like cold weather conditions during December) might go uncaptured as a result of this. Secondly, we're not controlling for any other factors beyond weather, location and day of the week that will also impact the number of Uber pickups like public transit availability. In addition, we suspect that the 2015 Uber data isn't complete, because we're seeing a significant reduction in the number of rides compared to 2014 data. The second and the third point could lead to non-significant and / or inaccurate findings for the analysis.
+
+\newpage
+
+## Q2 - Data Preparation
+We will be using the traffic collisions data set and the Uber pickup data set in New York City from 2015. We will be using the following database to obtain our collisions information: https://www1.nyc.gov/site/nypd/stats/traffic-data/traffic-data-archive-2015.page and the Uber pick up was collected from https://github.com/fivethirtyeight/uber-tlc-foil-response/blob/master/README.md.
+```{r city wide traffic collisions,include=FALSE}
+traffic_city <- read.csv(file = 'https://raw.githubusercontent.com/celisa/uber-trip-data/main/city_total_data.csv',
+                stringsAsFactors = FALSE, sep = ",",
+                 dec=",")
+colnames(traffic_city)
+traffic_city$Number_of_Motor_Vehicle_Collisions <- as.numeric(traffic_city$Number_of_Motor_Vehicle_Collisions)
+traffic_city$Vehicles_or_Motorists_Involved <- as.numeric(traffic_city$Vehicles_or_Motorists_Involved)
+traffic_city$Injury_or_Fatal_Collisions <- as.numeric(traffic_city$Injury_or_Fatal_Collisions)
+traffic_city$MotoristsInjured <- as.numeric(traffic_city$MotoristsInjured)
+traffic_city$MotoristsKilled <- as.numeric(traffic_city$MotoristsKilled)
+traffic_city$PassengKilled <- as.numeric(traffic_city$PassengKilled)
+traffic_city$PassengInjured <- as.numeric(traffic_city$PassengInjured)
+traffic_city$CyclistsInjured <- as.numeric(traffic_city$CyclistsInjured)
+traffic_city$CyclistsKilled <- as.numeric(traffic_city$CyclistsKilled)
+traffic_city$PedestrInjured <- as.numeric(traffic_city$PedestrInjured)
+traffic_city$PedestrKilled <- as.numeric(traffic_city$PedestrKilled)
+traffic_city$Bicycle <- as.numeric(traffic_city$Bicycle)
+#traffic_city$Month <- as.factor(traffic_city$Month)
+traffic_city$Month <- factor(traffic_city$Month,levels=c("January","February", "March","April","May","June"))
+exclude_extreme <- subset(traffic_city,
+                      GeoCode !="C")
+```
+```{r Uber Data, warning=FALSE, include=FALSE}
+uber_2015 <- read.csv("https://raw.githubusercontent.com/celisa/uber-trip-data/main/aggregated_uber_pickup_borough.csv",stringsAsFactors = FALSE, sep = ",",dec=",")
+uber_new <- uber_2015                                   # Duplicate data
+uber_new$DATE <- as.Date(uber_new$DATE)
+uber_new$year_month <- floor_date(uber_new$DATE,"month")
+#head(uber_new)
+uberaggr2 <- uber_new %>%                         # Aggregate data
+  group_by(Borough,year_month) %>%
+  #group_by(year_month) %>%
+  dplyr::summarize(counts = sum(counts)) %>%
+  as.data.frame()
+#head(uberaggr2)
+uberaggr_new <- subset(uberaggr2, Borough %in% c("Manhattan", "Brooklyn", "Queens", "Staten Island", "Bronx"))
+traffic_city_geo <- subset(traffic_city,GeoCode=="M"|GeoCode=="B"|GeoCode=="S"|GeoCode=="Q"|GeoCode=="K")
+summary(traffic_city_geo)
+month.f<-factor(traffic_city_geo$Month,levels=c("January","February", "March","April","May","June"),ordered=TRUE)
+region.f <-factor(traffic_city_geo$GeoCode) 
+```
+
+
+## Q2 - Data Overview
+### Uber Pickups
+The original uber pickup data set contained about 100000 observations which lists daily pickup information across 262 locations in New York City.  On the other hand, the traffic collision data set provided monthly collision information for every boroughs in 2015. In order to be consistent across both the datasets, we collected location reference provided in a separate dataset and joined with the uber pick up data set to find the specifi borough information. In addition, we aggregated monthly Uber pick up information to understand the behavior of uber pickups with the available traffic collisions information.
+### Traffic Collisions
+After some data cleaning and integration, we have 498 observations and 15 variables in our observations for traffic collisions. Key variables include number of motor vehicle collisions, injury or fatal collisions, and vehicles or motorists involved. The mean value for the number of motor vehicle collisions is 3488 per month, with the maximum value of 5749 and minimum value of 895. 
+### Combinations of the two data sets
+As we integrated our Uber rides dataset and traffic collisions in 2015 Jan-June, we got 30 observations and 17 unique variables in our dataset. This also leads to a challenge we will discuss in the later section. For each of our variable interest, we did some graph demonstration below: 
+```{r Graphs, echo=FALSE,message = FALSE, out.width = "50%", results = "hide", fig.show='hold'}
+ggplot(uberaggr_new, aes(y=counts, x=year_month, fill=Borough)) + labs(title = "Histogram of Uber pickups in 2015", x = "Month(Jan-June)", y = "Number of Uber Pickups")+
+  geom_bar(stat="identity", position="dodge2", size=1, width=150, alpha=1)+ scale_fill_manual(values=c("#CC79A7","#52854C","#4E84C4","#FFDB6D","darkred"))+theme_bw()
+barchart(region.f~traffic_city_geo$Number_of_Motor_Vehicle_Collisions|month.f,group =region.f,main="Number of Collisons Plot by Month and Region in 2015",
+   xlab="Regions",ylab="Number of Motor Vehicle Collisions",auto.key=list(space="top", columns=5, title="Regions", cex.title=1,points=FALSE, rectangles=TRUE))
+```
+The figure above shows the Uber pick up data across all the boroughs during January to June of 2015. From the figure, we can observe that Manhattan has the highest pickup rates among all the boroughs, followed by Brooklyn, Queens, Bronx and Staten Island. This is expected since Manhattan is usually the busiest across all the boroughs. In addition, we noticed a small drop in the uber pickups, particularly in Manhattan, during April which later picked up back in the following months. This could perhaps imply that people took some extra vacation days in April, or decided to work from home instead.
+## Q2 - EDA
+Since our primary variables of interest are the number of collisions in New York City and the number of Uber rides, we did a scatter plot the number of collisions against the number of Uber rides. The original plot seemed off as the number is quite large. As a result, we log-transformed the data, and the relationship appears to be quite linear. 
+```{r, include=FALSE}
+uberaggr_update <- uberaggr_new %>%
+  mutate(Month = case_when(
+    year_month=="2015-01-01"~"January",
+    year_month=="2015-02-01"~"February",
+    year_month=="2015-03-01"~"March",
+    year_month=="2015-04-01"~"April",
+    year_month=="2015-05-01"~"May",
+    year_month=="2015-06-01"~"June"
+    ))
+uberaggr_update <- uberaggr_update %>%
+  mutate(Borough=tolower(Borough))
+traffic_city_update <- traffic_city_geo%>%
+  mutate(GeoCodeLabel=tolower(GeoCodeLabel))
+joined_table <-full_join(uberaggr_update,traffic_city_update,by=c('Borough'='GeoCodeLabel','Month'='Month'))
+joined_table$log_counts <- log(joined_table$counts)
+joined_table$log_collisions <- log(joined_table$Number_of_Motor_Vehicle_Collisions)
+```
+```{r, echo=FALSE,message=FALSE,fig.width=6,fig.height=3}
+ggplot(data=joined_table, aes(x=log_counts, y=log_collisions)) + geom_point(fill="lightblue")+theme(aspect.ratio = 0.75)+geom_smooth(method="lm")+ggtitle("") + theme(aspect.ratio = 0.25)+labs(x="Number of Uber Rides",y="Number of Collisions in NYC",title="Log-Transformed Collisions VS Uber Pick-ups")
+```
+## Q2 - Challenges
+
+
+\newpage
+## Appendix
+
+Table 1.1
+``` {r figure 1.1 - table 1, echo=FALSE}
+sum_uber_data = uber15_weather[c("trips","PRCP","SNOW","TAVG")]
+summary(sum_uber_data) %>% kable
+```
+
+Table 1.2
+``` {r weather dictionary, echo=FALSE}
+weather_dict <- read.csv('https://raw.githubusercontent.com/celisa/uber-trip-data/main/weather_dict.csv')
+weather_dict %>% kable()
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
