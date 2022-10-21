@@ -11,7 +11,7 @@ WT09,Blowing or drifting snow
 DASF,Number of days included in the multiday snow fall total (MDSF)
 WDF2,Direction of fastest 2-minute wind
 WDF5,Direction of fastest 5-second wind
-WT10,Tornado or funnel cloud"
+WT10,Tornado or funnel cloud
 PGTM,Peak gust time
 WT11,High or damaging winds
 TMAX,Maximum temperature
