@@ -1,0 +1,121 @@
+---
+title: "Weather Uber Data EDA"
+author: "Genesis Qu, Elisa"
+output:
+  pdf_document: default
+  html_notebook: default
+---
+
+```{r}
+# Importing packages
+library(tidyverse)
+library(lubridate)
+library(ggplot2)
+```
+
+```{r}
+# Importing the data
+uber <- read_csv("uber-data-cleaned.csv")
+```
+
+## Exploratory Data Analysis
+
+```{r}
+uber$DATE <- as_datetime(uber$DATE)
+uber$weekday <- wday(uber$DATE)
+uber$weekday <- 
+  factor(uber$weekday, 
+         levels=c(1:7),
+         labels=c("Sunday", "Monday","Tuesday",
+                  "Wednesday","Thursday","Friday",
+                  "Saturday"))
+# Plotting weekday against the number of trips
+ggplot(data = uber, aes(x = weekday, y = num_uber_trips)) + 
+  geom_bar(position = "dodge",  stat = "summary", fun = "mean") +
+  labs(x = "Day of the week", y = "Number of trips", title = "Distribution of trips by day")
+```
+
+```{r}
+# Plotting average temperature against uber trips
+ggplot(data = uber, aes(x = TAVG, y = num_uber_trips)) + geom_point() +
+  labs(x = "Tempearature (in Fahrenheit)", y = "Number of trips", title = "Temperature x Trips")
+```
+
+```{r}
+# Plotting daily precipitation against uber trips
+ggplot(data = uber, aes(x = PRCP, y = num_uber_trips)) + geom_point()
+
+uber$rain <- ifelse(uber$PRCP > 0, "rain", "no_rain")
+
+ggplot(data = uber, aes(x = rain, y = num_uber_trips)) + geom_boxplot()
+
+```
+
+```{r}
+# Plotting daily snow against uber trips
+ggplot(data = uber, aes(x = SNOW, y = num_uber_trips)) + geom_point()
+```
+
+```{r}
+# Plotting daily precipitation against uber trips
+ggplot(data = uber, aes(x = AWND, y = num_uber_trips)) + geom_point()
+```
+
+```{r}
+# Uber 2015 borough data
+uber15 <- read_csv("uber-data-2015.csv")
+uber15$weekday <- wday(uber15$Pickup_date)
+uber15$weekday <- 
+  factor(uber15$weekday, 
+         levels=c(1:7),
+         labels=c("Sunday", "Monday","Tuesday",
+                  "Wednesday","Thursday","Friday",
+                  "Saturday"))
+```
+
+```{r}
+# Plotting weekday against the number of trips
+ggplot(data = uber15, aes(x = weekday, y = num_uber_trips)) + 
+  geom_bar(position = "dodge",  stat = "summary", fun = "mean") 
+```
+```{r}
+uber <- read_csv("uber-data-cleaned.csv")
+
+uber15_agg <- uber15 %>% group_by(Pickup_date, Borough) %>% 
+  summarise(trips = sum(num_uber_trips))
+
+ggplot(data = uber15_agg, aes(x = Borough, y = trips)) + 
+  geom_bar(position = "dodge",  stat = "summary", fun = "mean") +
+  labs(x = "Borough", y = "Number of trips", title = "Average number of trips by borough")
+
+uber_weather <- uber %>% select(!num_uber_trips)
+uber15_weather <- left_join(uber15_agg, uber_weather, by = c("Pickup_date" = "DATE"))
+```
+
+```{r}
+ggplot(data = uber15_weather, aes(x = TAVG, y = trips, color = Borough)) + 
+  geom_point() +
+  labs(x = "Tempearature (in Fahrenheit)", y = "Number of trips", title = "Temperature x Trips broken down by Boroughs")
+```
+
+```{r}
+# Plotting average temperature against uber trips
+ggplot(data = uber15_weather, aes(x = PRCP, y = trips, color = Borough)) + geom_point() +
+  labs(x = "Precipitation (in milimeters)", y = "Number of trips", title = "Precipitation x Trips broken down by boroughs")
+```
+
+```{r}
+
+uber15_weather$rain <- ifelse(uber15_weather$PRCP > 0, "rain", "no_rain")
+ggplot(data = uber15_weather, aes(x = Borough, y = trips, color = rain)) + geom_boxplot() +
+  labs(x = "Borough", y = "Number of trips", title = "How boroughs and rain impact rides (by day)") + scale_color_discrete(name = "", labels = c("No rain", "Rain"))
+
+
+```
+
+```{r}
+# Plotting daily precipitation against uber trips
+ggplot(data = uber15_weather, aes(x = AWND, y = trips, color = Borough)) + geom_point() +
+  labs(x = "Average wind speed", y = "Number of trips", title = "Wind speed x Trips broken down by boroughs each day")
+```
+
