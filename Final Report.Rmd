@@ -13,7 +13,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## QUESTIONS AND NOTES
 
-##TODO
+##TODO - Deadline:
 1) Include key results in Abstract
 2) Cite the data using APA style in Introduction
 
@@ -24,23 +24,50 @@ New York City is known for heavy traffic congestion, and with the rise of ride-s
 In this report, we would in particular like to research the following two questions: Q1) do weather conditions have an impact on the number of Uber pickup rides in New York City? and Q2) Did the introduction of Uber in 2015 increase the number of traffic collision deaths in New York City (yes / no)? We will be building a predictive model to estimate the number of Uber rides given the weather conditions and traffic collision information on a given day to estimate how these factors influence the traffic flow in New York City. The data for Uber rides was obtained from NYC Taxi & Limousine Commission (TLC) <INCLUDE APA STYLE CITATION> and ... <FINISH UP OTHER DATA SOURCES> 
 
 ## Methods
-- Describe the process you used to conduct analysis:
-  - EDA
-  - data cleaning (e.g., did you exclude missing values? If so, how many? Did you collapse
-    categories for any variables?) 
-  - describe the models you fit, and any changes you made to improve
-    model fit (e.g., did you exclude any influential points? Did you do have to address multicollinearity issues? Did you transform any variables?). Feature selection? Explain the rationale for choosing this specific model. 
-  - describe model diagnostics. The organization of this section may depend on your particular dataset/analysis, but you may want to break it into subsections
-    such as “Data,” “Models,” and “Model assessment.” R squared-value? Model assumptions valid?
 
-## Results
+### Q1
+
+#### Data - Elisa
+- data description, descriptive stats, number of observations, factors, and brief description of data cleaning processes.- data cleaning (e.g., did you exclude missing values? If so, how many? Did you collapse
+    categories for any variables?) [mostly done] 
+  - EDA [mostly done]
+
+#### Models - Genesis
+- rationale for choosing this model
+- Feature selection
+- (e.g., did you exclude any influential points? Did you do have to address multicollinearity issues? Did you transform any variables?). 
+
+#### Model Assessment - Genesis
+- Model assumptions - are they satisifed or not. Could also be mentioned under limitations. 
+- Quickly
+- Have training and testing datasets. And perform a validation check to report accuracy. (Precision / Recall for Categoricals, AUC, ROC)
+
+### Q2
+
+#### Data - Pomelo 
+- data description, descriptive stats, number of observations, factors, and brief description of data cleaning processes.- data cleaning (e.g., did you exclude missing values? If so, how many? Did you collapse
+    categories for any variables?) [mostly done] 
+  - EDA [mostly done]
+
+#### Models - Ibrahim
+- rationale for choosing this model
+- Feature selection
+- (e.g., did you exclude any influential points? Did you do have to address multicollinearity issues? Did you transform any variables?). 
+
+#### Model Assessment - Ibrahim
+- Model assumptions - are they satisifed or not. Could also be mentioned under limitations. 
+- Quickly
+- Have training and testing datasets. And perform a validation check to report accuracy. (Precision / Recall for Categoricals, AUC, ROC)
+
+## Results - Elisa / Pomelo
+- Interpretation of final model
 - Here you should present results for all aspects of the analysis. The structure of this section
 should mirror the structure of the methods section. For example, you can start with a few key EDA
 results (e.g., a table of descriptive statistics), then present model results, then address assessment.
 This is the section where you will primarily refer to tables and figures. You should have at least 1
 figure for each research question that illustrates a key result of the analysis.
 
-## Conclusion
+## Conclusion - Elisa / Pomelo
 - Describe the key takeaways from your analysis, limitations, and future work that can be
 done to advance knowledge in this area
 
