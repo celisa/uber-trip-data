@@ -143,7 +143,7 @@ uber_merged <- read_csv("https://raw.githubusercontent.com/celisa/uber-trip-data
 
 uber_weather_merged <- full_join(uber_merged, new_weather, by = c("DATE" = "Pickup_date", 'Borough' = 'Borough'))
 
-keeps <- c("DATE","Borough","No. of uber trips", "PERSONS KILLED", "trafficcol","AWND","rain", "SNOW", "TAVG")
+keeps <- c("DATE","Borough","No. of uber trips", "PERSONS KILLED","AWND","rain", "SNOW", "TAVG")
 
 final_df = uber_weather_merged[keeps]
 
@@ -177,7 +177,7 @@ test   <- subset(final_df, sample == FALSE)
 # train2  <- subset(final_df, sample2 == TRUE)
 # test2   <- subset(final_df, sample2 == FALSE)
 
-train_logist <- glm(killed_YN ~ Borough + ubertrips + trafficcol + AWND + rain + SNOW + TAVG, data = train, family = "binomial" )
+train_logist <- glm(killed_YN ~ Borough + ubertrips + AWND + rain + SNOW + TAVG, data = train, family = "binomial" )
 
 
 #train_logist2 <- glm(killed_YN ~ Borough + ubertrips + trafficcol + AWND + rain + SNOW + TAVG, data = train2, family = "binomial" )
@@ -194,8 +194,11 @@ train_logist <- glm(killed_YN ~ Borough + ubertrips + trafficcol + AWND + rain +
 #### Models
 For this question, we would like to examine contributory factors to the likelihood of people getting killed in traffic collisions. We are interested in building a predictive model to find out whether factors such as daily uber trips, variations in weather pattern or the number of daily traffic collisions contribute to the probability of people getting killed in traffic collisions. Though our outcome variable, people getting killed, is a discrete variable, this incident is most likely to either takes place or not. In other words, we will categorize at least one or more person killed as Yes or 1, and no deaths in a particular collision as No or 0. Therefore, we are treating our outcome variable as dichotomous and decided to apply logistic regression model.
 
+
 #### Variable Selection
-Our response variable in the data set is people getting killed from the traffic collision (Yes/No) and is labelled in the data set as `killed_YN` which is a binary variable of Yes and No. Our explanatory variables include no. of daily uber trips per Borough, `ubertrips`, daily traffic collisions aggregated on borough level, `trafficcol`, and the five boroughs of New York City, `Borough`. To understand the influence of variation in weather patterns, we have also included Average daily wind, `AWND`, average daily temperature, `TAVG`, average daily snow, `SNOW`, and whether it rained on a given day, `rain`, which is a boolean data type. We used a priori variable selection approach to include the above variables in our model.
+Our response variable in the data set is people getting killed from the traffic collision (Yes/No) and is labelled in the data set as `killed_YN` which is a binary variable of Yes and No. Our explanatory variables include no. of daily uber trips per Borough, `ubertrips`, and the five boroughs of New York City, `Borough`. To understand the influence of variation in weather patterns, we have also included Average daily wind, `AWND`, average daily temperature, `TAVG`, average daily snow, `SNOW`, and whether it rained on a given day, `rain`, which is a boolean data type. We used a priori variable selection approach to include the above variables in our model.
+
+We used the VIF function to assess multicollinearity between the predictors. We found very strong multicollinearity present among daily uber trips, `ubertrips`, and the Boroughs, `Manhattan`(35.92) and `Brookylyn`(6.85), which drops significantly when the variable `ubertrips` is excluded from the model. However, we recognized the presence of multicollinearity is possibly due to the fact that there were relatively more number of daily uber pickups in `Manhattan` and `Brooklyn`, compared to other boroughs. Additionally, since `Borough` is a categorical variable while `ubertrips` is a numeric variable, the effect of multicollinearity among these predictors can be ignored. In addition, none of the other predictor variables have VIF factor over 5, suggesting very low multicollinearity among other predictors in our model.
 
 Our data is collected between January 1, 2015 through June 30, 2015 and we used random sampling to split the dataset into 70/30 ratio between train and test data, where we will be training our model on the train data set and analyzing it's out of sample accuracy using the test data set.
 
@@ -204,16 +207,16 @@ We created a model fitting equation that explains the probability of people gett
 
 $$P[Y_{i} = 1 | x_{i}] = \pi_{i} $$
 
-$$logit(\pi_{i}) = ln(\pi_{i}/1-\pi_{i}) = {\beta_0} + {\beta_1}Borough + {\beta_2}ubertrips +{\beta_3}trafficcol +{\beta_4}AWND +{\beta_5}rain  + {\beta_6}SNOW + {\beta_7}TAVG $$
+$$logit(\pi_{i}) = ln(\pi_{i}/1-\pi_{i}) = {\beta_0} + {\beta_1}Borough + {\beta_2}ubertrips +{\beta_3}AWND +{\beta_4}rain  + {\beta_5}SNOW + {\beta_6}TAVG $$
 
-```{r final_project, echo = FALSE, results = 'asis', message = FALSE, warning = FALSE, cache = TRUE}
+```{r final_project, echo = FALSE, results = 'asis', message = FALSE, warning = FALSE}
 
 stargazer(train_logist,header=FALSE,title="Logistic Regression Models", digits = 2,type='latex',no.space = TRUE,column.sep.width = "3pt",single.row=TRUE)
 
 ```
 
 
-```{r final_project2, echo = FALSE, results = 'asis', message = FALSE, warning = FALSE, cache = TRUE}
+```{r final_project2, echo = FALSE, results = 'asis', message = FALSE, warning = FALSE}
 train_logistic_summary <- data.frame(exp(cbind(OR = coef(train_logist), confint(train_logist))))
 
 kable(train_logistic_summary,col.names=c("Odds ratio","2.5%","97.5%"), format = "latex", caption = "Odds ratio and confidence intervals") %>%   kable_styling(position="center",latex_options = c("hold_position"))
@@ -239,16 +242,16 @@ roc(train$killed_YN, fitted(train_logist), print.thres=0.5,print.auc = T, plot =
 
 
 
-```{r final_project4, echo = FALSE, results = 'asis', message = FALSE, warning = FALSE, cache = TRUE}
+```{r final_project4, echo = FALSE, results = 'asis', message = FALSE, warning = FALSE}
 ##in sample prediction
 
 training_prediction2 <- predict(train_logist, train, type="response")
-training_prediction2 <- as.factor(ifelse(training_prediction2 > 0.5, 1, 0))
+training_prediction2 <- as.factor(ifelse(training_prediction2 > 0.087, 1, 0))
 confusion_new <- confusionMatrix(training_prediction2, as.factor(train$killed_YN_binary))
 
 #out of sample prediction seed
 test_prediction2 <- predict(train_logist, test, type="response")
-test_prediction2 <- as.factor(ifelse(test_prediction2 > 0.5, 1, 0))
+test_prediction2 <- as.factor(ifelse(test_prediction2 > 0.087, 1, 0))
 confusion_test <- confusionMatrix(test_prediction2, test$killed_YN_binary)
 
 
@@ -256,8 +259,9 @@ confusion_test <- confusionMatrix(test_prediction2, test$killed_YN_binary)
 
 ```
 
-```{r final_project5, echo = FALSE, results = 'asis', message = FALSE, warning = FALSE, cache = TRUE}
-confusion_mat_1 <- matrix(c(578,0, 56, 0), nrow = 2, dimnames = list(c("Pred not killed", "Pred killed"), c("Not Killed", "Killed")))
+```{r final_project5, echo = FALSE, results = 'asis', message = FALSE, warning = FALSE}
+confusion_mat_1 <- matrix(c(47,9, 289, 289), nrow = 2, dimnames = list(c("Pred killed", "Pred not killed"), c("Killed", "Not Killed")))
+
 par(mfrow=c(1,1))
 
 stargazer(confusion_mat_1, header=FALSE, type="latex", 
@@ -270,7 +274,7 @@ stargazer(confusion_mat_1, header=FALSE, type="latex",
 ```
 
 ```{r final_project6, echo = FALSE, results = 'asis', message = FALSE, warning = FALSE, cache = TRUE}
-confusion_mat_2 <- matrix(c(247,0, 24, 0), nrow = 2, dimnames = list(c("Pred not killed", "Pred killed"), c("Not Killed", "Killed")))
+confusion_mat_2 <- matrix(c(19,5, 131, 116), nrow = 2, dimnames = list(c("Pred killed", "Pred not killed"), c("Killed", "Not Killed")))
 par(mfrow=c(1,1))
 
 stargazer(confusion_mat_2, header=FALSE, type="latex", 
@@ -284,9 +288,11 @@ stargazer(confusion_mat_2, header=FALSE, type="latex",
 
 ### Roc curve and Confusion Matrices
 
-The ROC plot above shows the performance of our logistic regression model on the sensitivity, specificity scale along with the Area under the curve(AUC) value. Our model has an AUC value of 0.717 which implies that our model has a greater chance of correctly predicting true samples(True positive) than incorrectly predicting (false positives). In other words, the proportion of correctly classified "killed" or "not killed" is higher than the proportion of incorrectly classified "killed"/"not killed". In addition, the confusion matrix (1) which shows the in sample predictive power of the model shows that our model accurately predicted 578 "not killed" while only predicting 56 deaths inaccurately as "not killed". This gives our an accuracy of 91.17%. The confusion matrix(2) below is created using the test data set which depics the performance of our model when predicting out of sample dataset using the 0.5 cut off probability. The out of sample accuracy is slightly lower, 91.14%, however still good enough to accurately predicting "killed" or "not killed" in the data set. 
+The ROC plot above shows the performance of our logistic regression model on the sensitivity, specificity scale along with the Area under the curve(AUC) value. Our model has an AUC value of ~0.70 which implies that our model has a greater chance of correctly predicting true samples(True positive) than incorrectly predicting (false positives). In other words, the proportion of correctly classified "killed" or "not killed" is higher than the proportion of incorrectly classified "killed"/"not killed". We used the ROC curve to tune our model's predictive power to accurately predict `killed` and 'not killed` using train(in sample) and test data(out of sample).
 
-We noticed in both in sample and out of sample dataset, we have a sensitivity of 1 and specificity of 0. This is because our data set contains a very small proportion of "killed" compared to the large number of "not killed" in the traffic collision, which realistically makes a lot of sense. Because of setting the probability cut off at 0.5, our model is predicting all the outcomes as "not killed", which is a limitation in our dataset.
+The confusion matrix (1) which depicts in sample predictive power of the model shows that our model accurately predicted 47 out of the 56 `killed` present in the dataset, with a sensitivity (true positive rate) of ~84%. However, our model does a poor job in predicting `not killed` in the dataset, with only predicting 289 out of 578 `not killed` present in the dataset. This gives our model a specificity rate of 50% only, suggesting that our model predicts people killed in the traffic collision far better than people not getting killed in the collision.
+
+The confusion matrix (2) shows our model's out of sample predictive power, where our model accurately predicted 19 off the 24 `killed` accurately, while only accurately predicting 116 out of 247 `not killed` present in the dataset. This gives our model a sensitivity rate of ~80% and a specificity rate of ~47%. Using the out of sample dataset, we noticed our model performance is consistent with in sample predictive performance with accurately predicting more kills than not kills in the traffic collision.
 
 ## Results
 Based on our results, we learned that the weather, day of the week, and Borough explain over 90% of the variation within the model. With the exception of temperature, weather conditions are less significant for determining the number of Uber pickup rides contrary to our initial belief. As illustrated by the EDA, the pickup Borough has the most explanatory power in terms of predicting the number of pick-ups. On average, Manhattan and Brooklyn have 54,625 and 11,555 more Uber Rides than that of Bronx respectively as illustrated in Figure 1.1 in the Models section. We also learned that on Mondays, on average we'd expect ~1795 less Uber pick-ups compared to Sunday. On Thu, Fri and Sat we'd expect there to be more Uber pick-ups compared to that of Sunday on average. Please see below graph that illustrates the number of pickups by weekday by Borough: 
@@ -297,9 +303,10 @@ ggplot(uber15_weather, aes(fill=Borough, y=trips, x=weekday)) +
 ```
 Supported by our model summary, the above graph illustrates that we have the most pickups during the weekends with majority of the rides taking place in Manhattan.
 
-We noticed all the boroughs are negatively correlated with the outcome variable, with `Bronx` being the reference state. Compared to `Bronx`, for every collision that happens in `Brooklyn`, the odds of getting killed is reduced by 35%, while in `Manhattan`, `Queens`, `Staten Island`, the odds of getting killed is lowered by 63%, 30% and 66%. By contrast, we can notice that traffic collisions in `Brooklyn` and `Queens` have a higher likelihood of resulting in death compared to `Manhattan` and `Staten Island`. Variables `Average Wind`, `Daily traffic collisions` and `Average daily temperature` all have a slight influence on traffic collision deaths, such that for every increase in traffic collision, or unit increase in average daily temperature or wind, the odds of getting killed in the traffic collision increases by 1%. In contrast, when there is rain in New York city, the odds of traffic collision deaths get reduced by 10%. This makes sense because when there is rain, people tend to be less likely on the streets and the motorists tend to be drive slower reducing the risks of getting killed in the traffic collision. We also noticed that the number of daily uber trips does not have any impact on the traffic collision deaths. To be precise, for every increase in the number of daily uber trips, the odds of getting killed increases by 0.01%, which can be considered negligible.
+From the logistic regression result, we noticed that `Brooklyn` and `Queens` are positively correlated, and while `Manhattan` and `Staten Island` are negatively correlated with the outcome variable, with `Bronx` being the reference state. Compared to `Bronx`, for every collision that happens in `Brooklyn` and `Queens`, the odds of getting killed is increased by 70% and 40% respectively, while in `Manhattan`, `Staten Island`, the odds of getting killed is lowered by 37%, 80% respectively. This implies that there is a higher likelihood of getting killed in the traffic collision in `Brooklyn` and `Queens`, compared to `Manhattan` and `Staten Island`. Variables `Daily Average Wind (AWND)` and `Daily Average Temperature(TAVG)` slightly influence the likelihood of getting killed, such that for every unit or degrees increase in Average Wind or Temperature, the odds of getting killed in the traffic collision increases by 1.5% and 1.4% respectively. In contrast, when there is rain in New York City, the odds of traffic collision deaths get reduced by 10%. This makes sense because when there is rain, people tend to be less likely on the streets and the motorists tend to be drive slower reducing the risks of getting killed in the traffic collision. We also noticed that the number of daily uber trips does not have any impact on the traffic collision deaths. To be precise, for every increase in the number of daily uber trips, the odds of getting killed increases by 0.02%, which can be considered negligible.
 
-In our model, we noticed that the variable daily traffic collision (`trafficcol`) is statistically significant with our response variable, `killed_YN`. This is partially due to the fact that we only roughly 900 observations in our dataset and the dataset is constrained within the first six months of the year 2015. This definitely possesses a limitation on the predictive power of using this model to predict traffic collision deaths. In addition, this also suggests that we need to further look into independent variables which could explain our model better.
+However, it is worth mentioning that only the variable `Staten Island` is statistically significant with the outcome variable, while every other predictors in the model are not statistically significant with our outcome variable. This implies none of our predictors do a good job in explaining our outcome variable, `Killed_YN`. This is partially due to the fact that we only roughly 900 observations in our dataset and the dataset is constrained within the first six months of the year 2015. This definitely possesses a limitation on the predictive power of using this model to predict traffic collision deaths. In addition, this also suggests that we need to further look into independent variables which could explain our model better.
+
 
 <POMELO TO ADD A GRAPH>
 
